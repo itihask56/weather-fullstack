@@ -1,0 +1,44 @@
+{
+  "name": "weather-dashboard-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Weather Dashboard",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "npm run build:check && npm run build:optimize",
+    "build:check": "node -c src/server.js && echo '✅ Syntax check passed'",
+    "build:optimize": "npm prune --production && echo '✅ Production dependencies optimized'",
+    "build:full": "npm install --production && npm run build:check && echo '✅ Production build complete'",
+    "prestart": "npm run build:check",
+    "postinstall": "node scripts/setup.js || echo 'Setup script not found, skipping...'",
+    "health": "curl -f http://localhost:${PORT:-3001}/health || exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo 'Linting would go here'",
+    "clean": "rm -rf node_modules package-lock.json && npm install"
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "express",
+    "backend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.0.1",
+    "joi": "^18.0.1",
+    "node-cache": "^5.1.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

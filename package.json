@@ -1,0 +1,29 @@
+{
+  "name": "weather-dashboard",
+  "version": "1.0.0",
+  "description": "Enterprise-grade weather dashboard with multi-layer caching and real-time features",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "build": "cd backend && npm install",
+    "dev": "cd backend && npm run dev",
+    "health": "curl -f http://localhost:10000/health || exit 1"
+  },
+  "keywords": [
+    "weather",
+    "dashboard",
+    "nodejs",
+    "express",
+    "sqlite",
+    "caching"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-github-repo-url"
+  }
+}

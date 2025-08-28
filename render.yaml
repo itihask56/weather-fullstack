@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: weather-dashboard
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WEATHER_API_KEY
+        value: cac2155384844b07bab173545250701
+      - key: PORT
+        value: 10000
+      - key: DB_PATH
+        value: ./data/weather.db
+      - key: CACHE_TTL
+        value: 1800
+    healthCheckPath: /health
