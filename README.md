@@ -77,47 +77,31 @@ weather-dashboard/
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### **🌐 Deploy to Render (Recommended)**
+
+1. Push your code to GitHub
+2. Go to [render.com](https://render.com) and connect your repo
+3. Click "Create Web Service" - everything is pre-configured!
+4. Your app will be live with HTTPS in 2-3 minutes
+
+**📖 See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for detailed instructions.**
+
+### **💻 Local Development**
+
+```bash
+# Install dependencies
+cd backend && npm install
+
+# Start development server
+npm run dev
+
+# Access at: http://localhost:10000
+```
+
+### **Prerequisites**
 
 - Node.js 14+
-- Free API key from [WeatherAPI.com](https://www.weatherapi.com/)
-
-### Installation
-
-1. **Clone and setup:**
-
-   ```bash
-   git clone <repository-url>
-   cd weather-dashboard
-   cd backend && npm install
-   ```
-
-2. **Configure environment (backend/.env):**
-
-   ```bash
-   WEATHER_API_KEY=your_actual_api_key_here
-   PORT=3001
-   NODE_ENV=development
-   DB_PATH=./data/weather.db
-   CACHE_TTL=1800
-   RATE_LIMIT_WINDOW=900000
-   RATE_LIMIT_MAX=100
-   ```
-
-3. **Start the application:**
-
-   ```bash
-   # From backend directory
-   npm run dev    # Development with auto-restart
-   npm start      # Production mode
-   ```
-
-4. **Access the application:**
-   ```
-   Main App: http://localhost:3001
-   Health Check: http://localhost:3001/health
-   API Stats: http://localhost:3001/api/stats
-   ```
+- Free API key from [WeatherAPI.com](https://www.weatherapi.com/) (already configured)
 
 ## 📡 API Endpoints
 
