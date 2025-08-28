@@ -15,8 +15,21 @@ class WeatherService {
     const startTime = Date.now();
 
     if (!this.apiKey || this.apiKey === "your_weatherapi_key_here") {
+      console.error("❌ Weather API Key Error:");
+      console.error(
+        "- API Key:",
+        this.apiKey ? "Present but invalid" : "Missing"
+      );
+      console.error("- Environment:", process.env.NODE_ENV);
+      console.error(
+        "- All env vars:",
+        Object.keys(process.env).filter((k) => k.includes("WEATHER"))
+      );
+
       throw new Error(
-        "Please get a free API key from https://www.weatherapi.com/ and update your .env file"
+        process.env.NODE_ENV === "production"
+          ? "Weather API key is not configured. Please check environment variables."
+          : "Please get a free API key from https://www.weatherapi.com/ and update your .env file"
       );
     }
 
